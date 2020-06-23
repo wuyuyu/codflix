@@ -32,6 +32,11 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'signupNewUser':
+      signupNewUser();
+
+    break;
+
   endswitch;
 
 else:
