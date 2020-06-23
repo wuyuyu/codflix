@@ -9,3 +9,10 @@
 1. Follow the address of your repo. For example, if your repo is in ``www/codflix/``, the URL should be http://localhost/codflix or http://127.0.0.1/codflix
 
 Nothing else is required. You can now start your development
+
+
+
+create the road
+https://www.hostinger.fr/tutoriels/installer-utiliser-composer/
+
+https://packagist.org/packages/altorouter/altorouter
