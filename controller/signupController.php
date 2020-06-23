@@ -22,6 +22,9 @@ function signupPage() {
 
 /***************************
 * ----- SIGNUP FUNCTION -----
+regarder le tuto à 5:18
+https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/914508-ecrivez-des-donnees
+
 ***************************/
 
 function signupNewUser(){

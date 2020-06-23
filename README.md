@@ -12,7 +12,10 @@ Nothing else is required. You can now start your development
 
 
 
-create the road
+### Composer ---- Comment installer et utiliser Composer:
 https://www.hostinger.fr/tutoriels/installer-utiliser-composer/
 
-https://packagist.org/packages/altorouter/altorouter
+
+### PHPMailer ---- Comment utiliser la classe PHP Mailer pour l’envoi d’emails en SMTP ?
+https://help.adk-media.com/utiliser-classe-php-mailer-pour-envoi-emails-smtp.html
+https://github.com/PHPMailer/PHPMailer
