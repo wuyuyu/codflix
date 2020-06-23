@@ -23,6 +23,7 @@
                 </div>
             </div>
             <div class="title"><?= $media['title']; ?></div>
+            <div class="title"><small>Date de sortie: <?= $media['release_date']; ?></small></div>
         </a>
     <?php endforeach; ?>
 </div>
