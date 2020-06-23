@@ -85,7 +85,7 @@ class Media {
   }
 
   /***************************
-  * -------- GET LIST --------
+  * -------- GET LIST by title: searche bar --------
   ***************************/
 
   public static function filterMedias( $title ) {
@@ -102,6 +102,9 @@ class Media {
     return $req->fetchAll();
 
   }
+  /***************************
+  * -------- GET LIST of all medias --------
+  ***************************/
 
   public static function allMedias() {
 
@@ -115,6 +118,25 @@ class Media {
     $db   = null;
 
     return $req->fetchAll();
+
+  }
+
+  /***************************
+  * -------- GET one media by media id--------
+  ***************************/
+
+  public static function filterMediabyID( $media_id ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM media WHERE id = ? " );
+    $req->execute( array($media_id));
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch(PDO::FETCH_ASSOC);
 
   }
 

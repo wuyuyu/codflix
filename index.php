@@ -36,12 +36,23 @@ if ( isset( $_GET['action'] ) ):
 
 else:
 
-  $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
-  if( $user_id ):
-    mediaPage();
+
+$user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+
+
+if( $user_id ):   
+
+  $media_id = isset( $_GET['media'] ) ? $_GET['media'] : false;
+
+  if($media_id):
+    mediaDetailPage($media_id);
   else:
-    homePage();
+    mediaPage();
   endif;
+  
+else:
+  homePage();
+endif;
 
 endif;
