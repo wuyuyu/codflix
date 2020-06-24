@@ -5,6 +5,7 @@ require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
 require_once( 'controller/contactController.php' );
+require_once( 'controller/profilController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -34,12 +35,22 @@ if ( isset( $_GET['action'] ) ):
     break;
 
     case 'signupNewUser':
+
       signupNewUser();
 
     break;
 
-    case 'contact';
+    case 'contact':
+
       contact();
+
+    break;
+
+    case 'profil':
+
+      profil();
+
+    break;
 
   endswitch;
 
