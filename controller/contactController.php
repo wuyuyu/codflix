@@ -13,7 +13,7 @@ function contact()
         
     };
     
-    mail('contact@codflix.com', 'Formulaire de contact', $message, $headers);
+    mail('yuyuan.wu@edu.itescia.fr', 'Message dans la page contact', $message, $headers);
     
     if(isset($_POST['bouton'])){
         echo '
