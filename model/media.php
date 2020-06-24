@@ -88,13 +88,27 @@ class Media {
   * -------- GET LIST by title: searche bar --------
   ***************************/
 
-  public static function filterMedias( $title ) {
+  public static function filterMedias( $title, $select) {
 
     // Open database connection
     $db   = init_db();
-
-    $req  = $db->prepare( "SELECT * FROM media WHERE title = ? ORDER BY release_date DESC" );
-    $req->execute( array($title));
+    switch ($select){
+      case "genre_id":
+        $req  = $db->prepare( "SELECT * FROM media WHERE title = ? AND genre_id = ? ORDER BY release_date DESC" );
+        $req->execute( array($title, $select));
+        break;
+      case "release_date":
+        $req  = $db->prepare( "SELECT * FROM media WHERE title LIKE '$title%' AND release_date ORDER BY release_date DESC" );
+        $req->execute( array($title));
+        break;
+      case "type":
+        $req  = $db->prepare( "SELECT * FROM media WHERE title LIKE '$title%' AND 'type' ORDER BY release_date DESC" );
+        $req->execute( array($title));
+        break;
+      default:  
+        $req  = $db->prepare( "SELECT * FROM media WHERE title LIKE '$title%' ORDER BY release_date DESC" );
+        $req->execute( array($title));
+      }    
 
     // Close databse connection
     $db   = null;

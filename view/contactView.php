@@ -3,7 +3,7 @@
 
     <label><h2><strong>Contactez nous</strong></h2></label>
 
-  <form>
+  <form action="#" method="POST">
   <div class="form-group">
   <?php 
   
@@ -12,7 +12,7 @@
   
     if(!$user_id){
         echo     '<label for="exampleFormControlInput1">Votre email: </label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">';
+    <input type="email" class="form-control" name="email" placeholder="name@example.com">';
 
   }else{
     
@@ -24,11 +24,14 @@
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Message: </label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label >Message: </label>
+    <textarea class="form-control" name="message" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+  <button type="submit" class="btn btn-primary mb-2" name="bouton">Envoyer</button>
+  <span id="messageSent"></span>
 </form>
+
+
 
   <?php $content = ob_get_clean(); ?>
 

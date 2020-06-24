@@ -1,9 +1,22 @@
 <?php ob_start(); ?>
 
 <div class="row">
-    <div class="col-md-4 offset-md-8">
+    <div class="col-md-6 offset-md-6">
         <form method="get">
             <div class="form-group has-btn">
+                <select id="critereSelect" name="critereSelect" >
+
+                    <option value="">Filtrer:</option>
+                    <option value="genre_id">genre</option>
+                    <option value="release_date">date de sortie</option>
+                    <option value="type">type</option>
+                   
+                </select>
+                <select id="listCritereSelect" name="listCritereSelect" >
+
+
+
+                </select>
                 <input type="search" id="search" name="title" value="<?= $search; ?>" class="form-control"
                        placeholder="Rechercher un film ou une série">
 
@@ -27,6 +40,8 @@
         </a>
     <?php endforeach; ?>
 </div>
+
+
 
 
 <?php $content = ob_get_clean(); ?>

@@ -31,6 +31,7 @@
         </div>
       </nav>
 
+
         <!-- Page Content  -->
       <div id="content">
         <div class="header">
@@ -49,10 +50,53 @@
       </div>
     </div>
 
-    <script src="public/lib/jquery/js/jquery-3.5.0.min"></script>
+    <script src="public/lib/jquery/js/jquery-3.5.0.min.js"></script>
     <script src="public/lib/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="public/js/script.js"></script>
+    <script>
+
+// récupérer les données via une requette Ajax depuis une url
+/*
+$(document).ready(function(){
+  alert("11111111");
+});
+*/
+  $(document).on("change", "#critereSelect", function(){
+
+    $.get("http://localhost:800/CodFlix/")
+    .done(function(data){
+        if(data.error)
+        {
+            return;
+        }
+       //console.log(typeof data );
+        if($("#critereSelect").val() === "genre_id"){
+          $.each(JSON.parse(data), function(i,item){
+            $("#listCritereSelect").append("<option>" + item.genre_id + "</option>");
+
+            //console.log(item);
+          });
+          
+        }
+        console.log(data);
+    })
+    .fail(function(xhr){
+        if(xhr.status === 0)
+        {
+            return;
+        }
+
+    })
+    .always(function(){
+
+    });
+  });
+    
+
+
+
+</script>
   </body>
 
 </html>

@@ -8,12 +8,25 @@ require_once( 'model/media.php' );
 
 function mediaPage() {
   $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
-  if($search!=null){
-     $medias = Media::filterMedias( $search );
+  $select = isset($_GET['critereSelect']) ? $_GET['critereSelect'] : null;
+
+  $is_ajax = 'xmlhttprequest' == strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ?? '' );
+  if(!$is_ajax){
+
+      if( $search || $select){
+
+      $medias = Media::filterMedias( $search, $select );
+  
+
+    }else{
+      $medias = Media::allMedias();
+    }
+    require('view/mediaListView.php');
   }else{
-    $medias = Media::allMedias();
+    echo json_encode(Media::allMedias());
+    
   }
-  require('view/mediaListView.php');
+
 }
 
 function mediaDetailPage($media_id){
