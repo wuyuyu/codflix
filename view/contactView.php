@@ -5,8 +5,22 @@
 
   <form>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Votre email: </label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  <?php 
+  
+  $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+
+  
+    if(!$user_id){
+        echo     '<label for="exampleFormControlInput1">Votre email: </label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">';
+
+  }else{
+    
+      echo "Votre email: " . User::getUserById( $user_id )['email'];
+  }
+
+  ?>
+
   </div>
 
   <div class="form-group">

@@ -7,6 +7,9 @@ require_once( 'controller/mediaController.php' );
 require_once( 'controller/contactController.php' );
 require_once( 'controller/profilController.php' );
 
+
+$user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+
 /**************************
 * ----- HANDLE ACTION -----
 ***************************/
@@ -47,8 +50,11 @@ if ( isset( $_GET['action'] ) ):
     break;
 
     case 'profil':
-
-      profil();
+      // si utilisateur est connecté
+      if($user_id){
+        profil($user_id);
+      }
+      
 
     break;
 
@@ -56,23 +62,24 @@ if ( isset( $_GET['action'] ) ):
 
 else:
 
+  /**************************
+* -----  je vérifie si utilisateur est connecté ou pas 
+***************************/
 
 
-$user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
+  if( $user_id ):   
 
-if( $user_id ):   
+    $media_id = isset( $_GET['media'] ) ? $_GET['media'] : false;
 
-  $media_id = isset( $_GET['media'] ) ? $_GET['media'] : false;
-
-  if($media_id):
-    mediaDetailPage($media_id);
+    if($media_id):
+      mediaDetailPage($media_id);
+    else:
+      mediaPage();
+    endif;
+    
   else:
-    mediaPage();
+    homePage();
   endif;
-  
-else:
-  homePage();
-endif;
 
 endif;
