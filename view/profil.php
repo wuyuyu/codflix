@@ -24,26 +24,26 @@
 
   $user = getUserByID($_SESSION["user_id"]);
 
-  
-
-
 ?>
 
 
-    <label><h2><strong>Profil</strong></h2></label>
+    <label><h2><strong>Mon Profil</strong></h2></label>
 
   <form>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Votre email actuel:  <?php echo $user['email'] ; ?></label>
+    
+    <label for="exampleFormControlInput1"><strong>Modifiez votre mot de passe: </strong></label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Confirmez votre mot de pass actuel"></br>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Entrez votre nouveau mot de pass"></br>
+    
+    <label for="exampleFormControlInput1"><strong>Modifiez votre Email:</strong> ( mail actuel:  <?php echo $user['email'] ; ?> ) </label></br>
   
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Entrez votre nouveau email"></br>
   </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Message: </label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+<button type="submit" class="btn btn-primary mb-2"><small>Confirmer la modification</small></button></br>
+<button type="submit" class="btn btn-danger mb-2"><small>!!!Supprimer votre compte</small></button>
+  
+  
 </form>
 
   <?php $content = ob_get_clean(); ?>
