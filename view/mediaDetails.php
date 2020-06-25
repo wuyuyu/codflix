@@ -35,6 +35,8 @@
 			</div>
 		</div>
     </div>
+
+    <h3>Vous aimez aussi:</h3>
     
     <div class="media-list">
     <?php foreach( $medias as $media ): ?>

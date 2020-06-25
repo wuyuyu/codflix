@@ -30,7 +30,7 @@ function mediaPage() {
 }
 
 function mediaDetailPage($media_id){
-  $medias = Media::allMedias();
+  $medias = Media::filterMediaSuggest();
  
   $media = Media::filterMediabyID( $media_id );
   require('view/mediaDetails.php');

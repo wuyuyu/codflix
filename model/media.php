@@ -154,4 +154,30 @@ class Media {
 
   }
 
+  
+    /***************************
+  * -------- GET LIST of medias suggest--------
+  Vous étudierez les critères suivants :
+Regarde t’il plus de série ou de film ?
+○ Quel genre regarde t il le plus souvent?
+
+○ Quel genre de film/série a t il regardé mais pas terminé ? Dans ce cas là vous
+exclurez ces genre de film et série de vos propositions
+  ***************************/
+
+  public static function filterMediaSuggest() {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT * FROM media LIMIT 4 " );
+    $req->execute();
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetchAll();
+
+  }
+
 }
