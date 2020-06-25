@@ -3,7 +3,11 @@
 
 require_once( 'model/user.php' );
 
-function profil($user_id){
+/****************************
+* ----- DISPLAY PROFIL PAGE -----
+****************************/
+
+function displayProfilPage($user_id){
  
     $user = User::getUserById( $user_id );
     require('view/profilView.php');
@@ -11,16 +15,50 @@ function profil($user_id){
     echo "djidshjfoijzio";
     var_dump($user_id);
     
-    /* Quand je click sur le button valider la modif, j'appelle la fonction setPassword, setMail
-    if(){
-        $password = $user["password"];
-        $email = $user["email"];
-        setPassword( $password, $password_confirm = false ) ;
-        setEmail( $email ) ;
-    }
 
+}
 
-    //Quand je click sur le button supprimer, je suprime id(je fais une requette SQL DELETE), 
-    */
+/****************************
+* ----- CHANGE INFOS IN PROFIL PAGE -----
+****************************/
+   
+function changeProfil(){
+
     
-  }
+
+    $user = User::getUserById( $_SESSION['user_id']);
+    
+
+    $newEmail = htmlentities($_POST['newEmail']);
+    $newPassword = htmlentities($_POST['newPassword']);
+    $passWordConfirm = htmlentities($_POST['paaswordConfirm']);
+
+    $db   = init_db();
+
+    if($passWordConfirm == $user['password']){
+       
+        if($newEmail){
+
+            $requete = $db->prepare("UPDATE user SET email=$newEmail WHERE id = ?");
+        };
+        if($newPassword){
+
+            $requete = $db->prepare("UPDATE user SET password= $newPassword WHERE id = ?");
+        };
+          
+        $requete ->execute(array($user['id']));
+
+            echo '
+            <script type="text/javascript">
+            alert("Votre modification a été pris en compte! ");
+            </script>';
+            
+    }
+    else{
+        
+    }
+    
+
+    require('view/profilView.php');
+
+}

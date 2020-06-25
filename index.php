@@ -53,11 +53,15 @@ if ( isset( $_GET['action'] ) ):
     case 'profil':
       // si utilisateur est connecté
       if($user_id){
-        profil($user_id);
+        displayProfilPage($user_id);
       }
 
     break;
 
+    case 'changeProfil':
+      changeProfil();
+    break;
+    
     case 'history':
       history();
     break;

@@ -64,13 +64,13 @@ $(document).ready(function(){
 });
 */
   $(document).on("change", "#critereSelect", function(){
-
+    $("#listCritereSelect").html("");
     $.get("http://localhost:800/CodFlix/")
     .done(function(data){
         if(data.error)
         {
             return;
-        }
+        }   
        //console.log(typeof data );
         if($("#critereSelect").val() === "genre_id"){
           $.each(JSON.parse(data), function(i,item){

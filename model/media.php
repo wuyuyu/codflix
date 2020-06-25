@@ -198,5 +198,26 @@ exclurez ces genre de film et série de vos propositions
         return $req->fetchAll();  
   }
 
+      /***************************
+  * -------- GET date medias by -------
+  ***************************/
+
+  
+  public static function filterDateMedia( ) {
+
+    // Open database connection
+    $db   = init_db();
+
+    $req  = $db->prepare( "SELECT release_date FROM media" );
+    $req->execute();
+
+    // Close databse connection
+    $db   = null;
+
+    return $req->fetch(PDO::FETCH_ASSOC);
+
+  }
+
+
 
 }

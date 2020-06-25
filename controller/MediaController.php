@@ -23,11 +23,26 @@ function mediaPage() {
     }
     require('view/mediaListView.php');
   }else{
-    echo json_encode(Media::allMedias());
+    switch($select):
+      case 'genre_id': 
+        
+      break;
+      
+      case 'release_date':
+        echo json_encode(Media::allMedias());
+      break;
+
+      case 'type':
+      break;
+    endswitch;
     
   }
 
 }
+
+/****************************
+* ----- DISPLAY DETAILS MEDIA  -----
+****************************/
 
 function mediaDetailPage($media_id){
   $medias = Media::filterMediaSuggest();
