@@ -1,24 +1,29 @@
 <?php 
 
 function history() {
-  $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
-  $select = isset($_GET['critereSelect']) ? $_GET['critereSelect'] : null;
 
-  $is_ajax = 'xmlhttprequest' == strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ?? '' );
-  if(!$is_ajax){
+    /********
+     * il faut créer une fonction pour récupérer une liste de historique (avec une table historique dans base de donnée ) 
+     * Créer la page pour afficher l’historique (HTML et CSS)
+        ● Afficher l’historique avec les informations de chaque stream
+        ● Possibilité de supprimer un élément de l’historique
+        ● Possibilité de supprimer l’intégralité de l’historique via un bouton “Supprimer mon
+        historique”
 
-      if( $search || $select){
+    étapes:
+        1. création d'une table 'history' dans la base de donnée, avec:
+            id, 
+            id l'utilisateur
+            id du media
+        2. création d'une fonction historyMedias(),
+        2. création d'une fonction lié au bouton "supprimer le média"
+        3. création d'une fonction pour la suppression de tous les éléments de la table historique
+     */
+    $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
-      $medias = Media::filterMedias( $search, $select );
+      $historys = Media::historyMedias($user_id );
   
-
-    }else{
-      $medias = Media::allMedias();
-    }
     require('view/historyView.php');
-  }else{
-    echo json_encode(Media::allMedias());
-    
-  }
+
 
 }

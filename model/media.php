@@ -180,4 +180,24 @@ exclurez ces genre de film et série de vos propositions
 
   }
 
+    /***************************
+  * -------- GET one media by media id--------
+  ***************************/
+
+  public static function historyMedias($user_id){
+
+        // Open database connection
+        $db   = init_db();
+
+        $req  = $db->prepare( "SELECT * FROM history WHERE user_id = ?" );
+        $req->execute(array($user_id));
+    
+        // Close databse connection
+        $db   = null;
+    
+        return $req->fetchAll();
+    
+
+  }
+
 }
