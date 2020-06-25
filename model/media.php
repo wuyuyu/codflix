@@ -121,7 +121,7 @@ class Media {
   ***************************/
 
   public static function allMedias() {
-
+   
     // Open database connection
     $db   = init_db();
 

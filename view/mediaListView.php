@@ -25,7 +25,7 @@
         </form>
     </div>
 </div>
-
+<h3>Médias susceptibles de vous plaire:</h3>
 <div class="media-list">
     <?php foreach( $medias as $media ): ?>
         <a class="item" href="/CodFlix?media=<?= $media['id']; ?>">
