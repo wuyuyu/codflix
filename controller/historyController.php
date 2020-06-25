@@ -1,7 +1,4 @@
 <?php 
-
-function history() {
-
     /********
      * il faut créer une fonction pour récupérer une liste de historique (avec une table historique dans base de donnée ) 
      * Créer la page pour afficher l’historique (HTML et CSS)
@@ -19,11 +16,16 @@ function history() {
         2. création d'une fonction lié au bouton "supprimer le média"
         3. création d'une fonction pour la suppression de tous les éléments de la table historique
      */
+
+function history() {
+
     $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
+    // $historys: tous les éléments historique d'un utilisateur
       $historys = Media::historyMedias($user_id );
+      var_dump($historys);
+      
   
     require('view/historyView.php');
-
 
 }

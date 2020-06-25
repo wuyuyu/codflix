@@ -136,7 +136,7 @@ class Media {
   }
 
   /***************************
-  * -------- GET one media by media id--------
+  * -------- GET one media data by media id--------
   ***************************/
 
   public static function filterMediabyID( $media_id ) {
@@ -181,7 +181,7 @@ exclurez ces genre de film et série de vos propositions
   }
 
     /***************************
-  * -------- GET one media by media id--------
+  * -------- GET historys medias by user id--------
   ***************************/
 
   public static function historyMedias($user_id){
@@ -195,9 +195,8 @@ exclurez ces genre de film et série de vos propositions
         // Close databse connection
         $db   = null;
     
-        return $req->fetchAll();
-    
-
+        return $req->fetchAll();  
   }
+
 
 }

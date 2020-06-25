@@ -35,3 +35,4 @@ function mediaDetailPage($media_id){
   $media = Media::filterMediabyID( $media_id );
   require('view/mediaDetails.php');
 }
+

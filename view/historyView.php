@@ -11,20 +11,20 @@
 </div>
 <h3>Historique de visionnage:</h3>
 <div class="media-list">
-    <?php foreach( $historys as $history ): ?>
+    <?php foreach( $historys as $history ):  ?>
         <a class="item" href="/CodFlix?media=<?= $history['id']; ?>">
             <div class="video">
                 <div>
                     <iframe allowfullscreen="" frameborder="0"
-                            src="<?= $media['trailer_url']; ?>" ></iframe>
+                            src="<?= Media::filterMediabyID($history["media_id"])["trailer_url"] ?>" ></iframe>
                 </div>
             </div>
-            <div class="title"><?= $media['title']; ?></div>
-            <div class="title"><small>Date de sortie: <?= $media['release_date']; ?></small></div>
+            <div class="title"><?= Media::filterMediabyID($history["media_id"])['title']; ?></div>
+            <div class="title"><small>Date de sortie: <?= Media::filterMediabyID($history["media_id"])['release_date']; ?></small></div>
             <button class="btn btn-primary" name="detail">Détails Média</button>
             <button class="btn btn-danger" name="deleteOne">Surprimer cette média</button>
             </a>
-            
+         
         
     <?php endforeach; ?>
 </div>
