@@ -23,9 +23,43 @@ function history() {
 
     // $historys: tous les éléments historique d'un utilisateur
       $historys = Media::historyMedias($user_id );
-      var_dump($historys);
-      
+
+
+    
+
+    /* recuperer chaque media_id dans history 
+      foreach($historys as $history): 
+        $medias= Media::filterMediabyID($history['media_id']);
+        var_dump($history['media_id']);
+        //var_dump($media);
+      endforeach;
+
+      $media= Media::filterMediabyID($history["media_id"]);
+/*
+        $mediaID=$mediaIDArray["media_id"];
+      echo "c'est quoi?" . $mediaID;
+      var_dump($mediaID);
+      $media = Media::filterMediabyID($mediaID);
+      */
   
     require('view/historyView.php');
 
+}
+
+function deleteOneMediaInHistory($media_id){
+    $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+    $historys = Media::historyMedias($user_id );
+
+    $db   = init_db();
+
+    $req  = $db->prepare( "DELETE FROM history WHERE media_id = ?" );
+    $req->execute( array($media_id));
+    
+        echo '
+        <script type="text/javascript">
+        alert("votre media est supprimé! ");
+        </script>';
+    
+
+    require('view/historyView.php');
 }

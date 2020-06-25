@@ -62,6 +62,10 @@ if ( isset( $_GET['action'] ) ):
       history();
     break;
 
+    case 'deleteOneMedia':
+      deleteOneMediaInHistory($_GET["media_id"]);
+    break;
+
   endswitch;
 
 else:
