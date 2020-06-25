@@ -12,25 +12,19 @@ Nothing else is required. You can now start your development
 
 
 
-### Composer ---- Comment installer et utiliser Composer:
-https://www.hostinger.fr/tutoriels/installer-utiliser-composer/
-
-
-### PHPMailer ---- Comment utiliser la classe PHP Mailer pour l’envoi d’emails en SMTP ?
-https://help.adk-media.com/utiliser-classe-php-mailer-pour-envoi-emails-smtp.html
-https://github.com/PHPMailer/PHPMailer
 
 ### AVANCEMENT DU PROJET ---- ?
 ### Fini:
 
-Afficher le détail d’un média
-Corriger la recherche
-Afficher la date de sortie d’un film sur les preview
-Ajouter une page nous contacter
-Ajouter une page profil utilisateur 
-Formulaire d’inscription 
-Proposer des médias en lien avec l’historique(algo pas fait)
-Historique de visionnage(sans les enregistrements ) 
+1. Afficher le détail d’un média
+1. Corriger la recherche
+1. Afficher la date de sortie d’un film sur les preview
+1. Ajouter une page nous contacter
+1. Ajouter une page profil utilisateur 
+1. Formulaire d’inscription 
+1. Proposer des médias en lien avec l’historique(algo pas fait)
+1. Historique de visionnage(sans les enregistrements ) 
+1. Améliorer la sécurité des mots de passe
 
 ### En cour:
 
@@ -38,11 +32,10 @@ Améliorer la recherche (L’ENFER)
 
 ### Reste à faire:
 
-Améliorer la sécurité des mots de passe
-Support des séries
-MAJ de l’historique à partir du visionnage
-Récupérer des informations depuis une API tierce
-Implémenter une liste de souhaits
+1. Support des séries
+1. MAJ de l’historique à partir du visionnage
+1. Récupérer des informations depuis une API tierce
+1. Implémenter une liste de souhaits
 
 ================================
 
@@ -316,3 +309,12 @@ Implémenter une liste de souhaits
 fiche du média.
 ● L'utilisateur aura accès à ses favoris sur la page d’accueil, au dessus du formulaire de
 recherche sous le titre “Vos médias à regarder”
+
+
+### Composer ---- Comment installer et utiliser Composer:
+https://www.hostinger.fr/tutoriels/installer-utiliser-composer/
+
+
+### PHPMailer ---- Comment utiliser la classe PHP Mailer pour l’envoi d’emails en SMTP ?
+https://help.adk-media.com/utiliser-classe-php-mailer-pour-envoi-emails-smtp.html
+https://github.com/PHPMailer/PHPMailer

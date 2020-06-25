@@ -11,7 +11,6 @@ function signupPage() {
   $user     = new stdClass();
   $user->id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
   
-
   if( !$user->id ):
     require('view/auth/signupView.php');
   else:
@@ -22,9 +21,9 @@ function signupPage() {
 
 /***************************
 * ----- SIGNUP FUNCTION -----
-regarder le tuto à 5:18
+ 
 https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/914508-ecrivez-des-donnees
-
+look at 5:18
 ***************************/
 
 function signupNewUser(){
@@ -36,26 +35,22 @@ function signupNewUser(){
   // Close databse connection
   $db   = null;
 
-  /* si l'inscription a été bien enregistré, les valeurs des champs demandés sont pas null 
-   il faut creer une fonction pour envoyer un mail avec un lien généré automatiquement (clé unique)dans le mail, ici, création une table dans la 
-   base de donné est neccessaire.
-
+  /* 
+  if the registration has been successfully registered, the values ​​of the fields requested are not null
+  you have to create a function to send an email with an automatically generated link (unique key)
+  in the mail, here, creating a table in the database is necessary.
   */
   if(isset( $_POST['email'] ) && isset( $_POST['password'] ) && isset( $_POST['password_confirm'] )){
 
-        $mail = htmlentities($_POST['email']);
-        $headers = "Veillez valider votre inscription en cliquant le lien: ";
+    $mail = htmlentities($_POST['email']);
+    $headers = "Veillez valider votre inscription en cliquant le lien: ";
         
-        // quand l'inscription est validé, user id est unique, récupérer user id pour l'envoie du mail
+  // when the registration is validated, user id is unique, retrieve user id for sending the email
 
-        $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
-        
+    $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+    $validationLink = "http://localhost:800/CodFlix/?user_id=" . $user_id;
 
-        $validationLink = "http://localhost:800/CodFlix/?user_id=" . $user_id;
-
-    
     mail('yuyuan.wu@edu.itescia.fr', 'Validation de votre inscription', $validationLink, $headers);
-
     require('view/auth/loginView.php');
     echo '
     <script type="text/javascript">

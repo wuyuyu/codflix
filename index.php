@@ -83,7 +83,7 @@ if ( isset( $_GET['action'] ) ):
 else:
 
   /**************************
-* -----  je vérifie si utilisateur est connecté ou pas 
+* -----  I check if user is logged in or not
 ***************************/
 
 
