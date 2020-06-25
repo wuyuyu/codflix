@@ -2,11 +2,12 @@
 
 <div class="row">
     <div class="col-md-3 offset-md-9">
-        <form method="post">
+        <a href="/CodFlix?action=deleteAllMedia&user_id=<?= $_SESSION['user_id']; ?>">
+
             <div class="form-group has-btn">
                 <input type="button" name="deleteAll" class="btn  btn-danger" value="Supprimer tous mon historique"></input>
             </div>
-        </form>
+        </a>
     </div>
 </div>
 <h3>Historique de visionnage:</h3>
