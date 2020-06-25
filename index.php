@@ -61,6 +61,10 @@ if ( isset( $_GET['action'] ) ):
     case 'changeProfil':
       changeProfil();
     break;
+
+    case 'deleteProfil':
+      deleteProfil();
+    break;
     
     case 'history':
       history();

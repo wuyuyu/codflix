@@ -17,10 +17,12 @@
     
   </div>
 <button type="submit" class="btn btn-primary mb-2" id="buttonConfirm"><small>Confirmer la modification</small></button></br>
-<button  class="btn btn-danger mb-2"><small>!!!Supprimer votre compte</small></button>
-  
-  
 </form>
+<form method="post" action="index.php?action=deleteProfil">
+  <button  name="delete" type="submit" class="btn btn-danger mb-2"><small>!!!Supprimer votre compte</small></button>
+</form>  
+  
+
 
 
 

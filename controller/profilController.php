@@ -24,11 +24,7 @@ function displayProfilPage($user_id){
    
 function changeProfil(){
 
-    
-
     $user = User::getUserById( $_SESSION['user_id']);
-    
-
     $newEmail = htmlentities($_POST['newEmail']);
     $newPassword = htmlentities($_POST['newPassword']);
     $passWordConfirm = htmlentities($_POST['paaswordConfirm']);
@@ -57,8 +53,26 @@ function changeProfil(){
     else{
         
     }
-    
-
     require('view/profilView.php');
 
+}
+
+/****************************
+* ----- DELETE PROFIL -----
+****************************/
+
+function deleteProfil(){
+
+    $user = User::getUserById( $_SESSION['user_id']);   
+    //$passWordConfirm = htmlentities($_POST['paaswordConfirm']);
+
+    $db   = init_db();
+    $requete = $db->prepare("DELETE FROM user WHERE id = ?");
+    $requete ->execute(array($user['id']));
+
+    echo '
+    <script type="text/javascript">
+    alert("Votre compte est supprimé! ");
+    </script>';
+    session_destroy();
 }
