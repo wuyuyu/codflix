@@ -26,15 +26,15 @@ https://github.com/PHPMailer/PHPMailer
 Afficher le détail d’un média
 Corriger la recherche
 Afficher la date de sortie d’un film sur les preview
-Ajouter une page nous contacter (mail à vérifier)
-Formulaire d’inscription (mail à vérifier, addresse de validation à vérifier)
+Ajouter une page nous contacter
+Ajouter une page profil utilisateur 
+Formulaire d’inscription 
 Proposer des médias en lien avec l’historique(algo pas fait)
+Historique de visionnage(sans les enregistrements ) 
 
 ### En cour:
 
-Ajouter une page profil utilisateur
-Améliorer la recherche
-Historique de visionnage
+Améliorer la recherche (L’ENFER)
 
 ### Reste à faire:
 

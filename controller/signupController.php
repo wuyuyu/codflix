@@ -29,8 +29,9 @@ https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et
 
 function signupNewUser(){
   $db   = init_db();
+  $hashde_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
   $requete = $db->prepare('INSERT INTO `user`(`email`, `password`) VALUES (?, ?)');
-  $requete ->execute(array($_POST['email'],$_POST['password']));
+  $requete ->execute(array($_POST['email'], $hashde_password ));
 
   // Close databse connection
   $db   = null;

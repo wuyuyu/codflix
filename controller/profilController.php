@@ -74,5 +74,5 @@ function deleteProfil(){
     <script type="text/javascript">
     alert("Votre compte est supprimé! ");
     </script>';
-    session_destroy();
+    header( 'location: index.php' );
 }
