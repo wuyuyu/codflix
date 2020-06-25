@@ -6,6 +6,7 @@ require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
 require_once( 'controller/contactController.php' );
 require_once( 'controller/profilController.php' );
+require_once( 'controller/historyController.php');
 
 
 $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
@@ -54,8 +55,11 @@ if ( isset( $_GET['action'] ) ):
       if($user_id){
         profil($user_id);
       }
-      
 
+    break;
+
+    case 'history':
+      history();
     break;
 
   endswitch;

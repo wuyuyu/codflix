@@ -19,12 +19,13 @@
         <div class="sidebar-menu">
           <ul>
             <li class="active"><a href="/CodFlix/">Médias</a></li>
-            <li><a href="index.php?action=contact">Nous contacter</a></li>
+            <li><a href="index.php?action=history">Historique</a></li>
             <?php 
              $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
             if($user_id){?>
-            <li><a href="index.php?action=profil">Profil</a></li>
+            <li><a href="index.php?action=profil">Mon profil</a></li>
             <li><a href="index.php?action=logout">Me déconnecter</a></li>
+            <li><a href="index.php?action=contact">Nous contacter</a></li>
             <?php }; ?>
 
           </ul>
